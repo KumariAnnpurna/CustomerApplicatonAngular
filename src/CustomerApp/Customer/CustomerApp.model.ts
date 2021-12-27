@@ -11,7 +11,8 @@ export class Customer{
     CustomerName:string = "";
     CustomerAmount:number = 0;
     formCustomerGroup: FormGroup = null; // Create object of FormGroup
-    constructor(){
+    constructor(){// Create object of FormGroup
+   
         
         var _builder = new FormBuilder();
         this.formCustomerGroup = _builder.group({}); // Use the builder to create 

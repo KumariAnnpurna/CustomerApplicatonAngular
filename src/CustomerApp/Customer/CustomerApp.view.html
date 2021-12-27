@@ -18,15 +18,7 @@ type=text/><br>
 [hidden]="!(hasError('required','CustomerNameControl'))"
 >Customer name is required</div><br>
 
-<table>
-  <tr>
-    <td>Customer code</td>
-    <td>Customer name</td>
-    <td>Customer amount</td>
-  </tr>
-  <tr *ngFor="let cust of CustomerModels">
-    <td>{{cust.CustomerCode}}</td>
-    <td>{{cust.CustomerName}}</td>
-    <td>{{cust.CustomerAmount}}</td>
-  </tr>
-</table>
+<grid-ui [grid-columns]="[{'colName':'CustomerCode'},{'colName':'CustomerName'},{'colName':'CustomerAmount'}]" 
+  [grid-data]="CustomerModels"
+  (grid-selected)="SelectCustomer($event)"
+></grid-ui>
