@@ -45,6 +45,7 @@ export  class CustomerComponent {
     this.CustomerModels = res;
     this.Disable = false;
     this.CustomerModel = new Customer();
+    //double click on button it not save same data
   }
   SelectCustomer(_selected:Customer){
     this.CustomerModel = _selected;
