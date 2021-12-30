@@ -3,6 +3,7 @@ import {Customer} from "./CustomerApp.model";
 // import {BaseLogger} from "../Utility/CustomerApp.Logger"
 import {Http} from "@angular/http"
 import {HttpClient} from "@angular/common/http"
+
 @Component({
   templateUrl: './CustomerApp.view.html'
 })
@@ -26,13 +27,13 @@ export  class CustomerComponent {
     custdto.CustomerCode = this.CustomerModel.CustomerCode;
     custdto.CustomerName = this.CustomerModel.CustomerName;
     custdto.CustomerAmount = this.CustomerModel.CustomerAmount;
-    this.httpc.post("http://localhost:3000/Customers",
+    this.httpc.post("./db/Customers",
         custdto).subscribe(res=>this.Success(res),
     res=>this.Error(res));
   }
   GetFromServer(){
     
-    this.httpc.get("http://localhost:3000/Customers").
+    this.httpc.get("./db/Customers").
     subscribe(res=>this.SuccessGet(res),res=>this.Error(res));
   }
   Error(res) {
